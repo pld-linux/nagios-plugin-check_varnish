@@ -2,7 +2,7 @@
 Summary:	Nagios plugin for Varnish
 Name:		nagios-plugin-%{plugin}
 Version:	1.0
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Networking
 Source0:	http://dl.sourceforge.net/project/varnish/nagios-varnish-plugin/1.0/nagios-varnish-plugin-%{version}.tar.gz
