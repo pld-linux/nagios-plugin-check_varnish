@@ -2,14 +2,14 @@
 Summary:	Nagios plugin for Varnish
 Name:		nagios-plugin-%{plugin}
 Version:	1.0
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking
-Source0:	http://dl.sourceforge.net/project/varnish/nagios-varnish-plugin/1.0/nagios-varnish-plugin-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/project/varnish/nagios-varnish-plugin/%{version}/nagios-varnish-plugin-%{version}.tar.gz
 # Source0-md5:	2426831061d0a793eca93321dec0ace8
-URL:		http://varnish.projects.linpro.no/
+URL:		http://www.varnish-cache.org/
 BuildRequires:	varnish-devel
-Requires:	nagios-core
+Requires:	nagios-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_sysconfdir	/etc/nagios/plugins
