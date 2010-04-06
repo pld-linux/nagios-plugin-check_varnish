@@ -8,9 +8,12 @@ Group:		Networking
 Source0:	http://downloads.sourceforge.net/project/varnish/nagios-varnish-plugin/%{version}/nagios-varnish-plugin-%{version}.tar.gz
 # Source0-md5:	2426831061d0a793eca93321dec0ace8
 URL:		http://www.varnish-cache.org/
+BuildRequires:	pkgconfig
 BuildRequires:	varnish-devel
 Requires:	nagios-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%undefine	__cxx
 
 %define		_sysconfdir	/etc/nagios/plugins
 %define		plugindir	%{_prefix}/lib/nagios/plugins
