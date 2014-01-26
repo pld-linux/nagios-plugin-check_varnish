@@ -7,6 +7,7 @@ License:	BSD
 Group:		Networking
 Source0:	http://repo.varnish-cache.org/source/varnish-nagios-%{version}.tar.gz
 # Source0-md5:	d9a5477f9143187ffe6314ddecb03015
+Source1:	%{plugin}.cfg
 URL:		http://www.varnish-cache.org/
 BuildRequires:	pkgconfig
 BuildRequires:	varnish-devel
@@ -24,15 +25,6 @@ Nagios plugin to check Varnish.
 %prep
 %setup -qn varnish-nagios-%{version}
 
-cat > nagios.cfg <<'EOF'
-# Usage:
-# %{plugin}
-define command {
-	command_name    %{plugin}
-	command_line    %{plugindir}/%{plugin} $ARG1$
-}
-EOF
-
 %build
 %configure
 %{__make}
@@ -41,7 +33,7 @@ EOF
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sysconfdir},%{plugindir}}
 install -p %{plugin} $RPM_BUILD_ROOT%{plugindir}/%{plugin}
-cp -a nagios.cfg $RPM_BUILD_ROOT%{_sysconfdir}/%{plugin}.cfg
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/%{plugin}.cfg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
