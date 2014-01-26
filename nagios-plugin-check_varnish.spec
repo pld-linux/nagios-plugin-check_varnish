@@ -1,12 +1,12 @@
 %define		plugin	check_varnish
-Summary:	Nagios plugin for Varnish
+Summary:	Nagios plugin to monitor Varnish instances
 Name:		nagios-plugin-%{plugin}
-Version:	1.0
-Release:	2
+Version:	1.1
+Release:	1
 License:	BSD
 Group:		Networking
-Source0:	http://downloads.sourceforge.net/project/varnish/nagios-varnish-plugin/%{version}/nagios-varnish-plugin-%{version}.tar.gz
-# Source0-md5:	2426831061d0a793eca93321dec0ace8
+Source0:	http://repo.varnish-cache.org/source/varnish-nagios-%{version}.tar.gz
+# Source0-md5:	d9a5477f9143187ffe6314ddecb03015
 URL:		http://www.varnish-cache.org/
 BuildRequires:	pkgconfig
 BuildRequires:	varnish-devel
@@ -22,7 +22,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Nagios plugin to check Varnish.
 
 %prep
-%setup -q -n nagios-varnish-plugin-%{version}
+%setup -qn varnish-nagios-%{version}
 
 cat > nagios.cfg <<'EOF'
 # Usage:
