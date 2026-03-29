@@ -2,7 +2,7 @@
 Summary:	Nagios plugin to monitor Varnish instances
 Name:		nagios-plugin-%{plugin}
 Version:	1.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking
 Source0:	http://repo.varnish-cache.org/source/varnish-nagios-%{version}.tar.gz
